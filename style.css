@@ -4,8 +4,42 @@
 *{
     margin: 0;
     padding: 0;
+    list-style: none;
+    text-decoration: none;
     
 }
+
+:root{
+    font-primary:"Baloo da 2", serif;
+    font-secudary:"Muli", serif;
+
+}
+
+.hamburguer{
+    /*background-color:red;*/
+    width: 2rem;
+    height: 2rem;
+    position: fixed;
+    z-index: 100;
+    left: 2rem ;
+    top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    cursor: pointer;
+
+
+
+
+}
+
+.line{
+    width: 100%;
+    height: 0.1rem;
+    background-color: #ffff;
+    box-shadow: 0.1rem 0.1rem 1px #000;
+}
+
 
 header{
     width: 100%;
@@ -16,19 +50,19 @@ header{
 
 }
 
-.img-wrapper {
+.img-wraper {
     width: 100%;
     height: 100%;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-.img-wrapper img {
+.img-wraper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.5;
-    animation:zoom 25s ;
+    opacity: 0.6;
+    animation:zoom 5s ;
 }
 
 @keyframes zoom{
@@ -49,11 +83,11 @@ header{
 }
 
 .banner h1{
-    color: black;
+    color: #ffff;
     font-size: 3.5rem;
-    font-family: "Baloo da 2", serif;
+    font-family: var(--font-primary);
     font-weight: 200;
-    text-shadow: .3rem .4rem 2px rgba(6, 11, 14, 0.4);
+    text-shadow: .3rem .4rem 2px rgba(1, 14, 15, 0.911);
     line-height: 3.5rem;
     margin-bottom: 2rem;
     opacity: 0;
@@ -61,7 +95,7 @@ header{
 }
 
 .banner buttom{
-    font-family: "Muli", serif;
+    font-family: var(--font-secundary);
     font-size: 1.2rem;
     text-transform: uppercase;
     color: #000;
@@ -82,11 +116,72 @@ header{
         transform: translate(0);
         opacity: 1;
         }
+}
 
+.sidebar{
+    width: 20rem;
+    height: 100vh;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: -20rem;
+    transition: all 1s ;
+}
+
+.sidebar.show-menu{
+    left: 0;
+}
+
+.menu{
+    position: absolute;
+    top: 10%;
+    right: 50%;
+    transform: translate(50%,50%);
+}
+
+.menu-item{
+    text-align: center;
+    margin-bottom: .5rem;
+}
+
+.menu-link{
+    font-family: var(--font-secundary);
+    font-size: 1.8rem;
+    color: #555;
+    transition: color 1s;
+    
+}
+
+.menu-link:hover{
+    color: aquamarine;
+}
+
+.social-media{
+    
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.social-media i{
+    background-color: rgba(49, 226, 226, 0.5);
+    color:#555;
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: background-color 1s;
 
 }
 
-
+.social-media i:hover{
+    background-color: seagreen;
+}
 
 .banner buttom:hover{
     opacity: 0.7;
